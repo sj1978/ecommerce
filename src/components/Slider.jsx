@@ -4,10 +4,10 @@ import guitars from '../images/allguitars.jpg'
 
 const Container = styled.section `
 width: 100%;
-height: 100vh;
 display: flex;
-background-color: coral;
-position: relative;`
+background-color: whitesmoke;
+position: relative;
+`
 
 const Arrow = styled.div `
 width: 50px;
@@ -22,7 +22,7 @@ cursor: pointer;
 opacity: 0.5;
 transition: all 0.5s ease;
 &:hover {
-    background-color: #e9f4fb;
+    background-color: blue;
     transform: scale(1.1);
 }
 postition: absolute;
@@ -31,23 +31,45 @@ bottom: 0;
 left: ${props => props.direction === "left" && "10px"};
 right: ${props => props.direction === "right" && "10px"};
 margin: auto;
+
 `
 const Wrapper = styled.div`
-width: 100%;
+height: 100%;
+display: flex;
+
+
+
 `
 const Slide = styled.div`
-width: 100vw;
-display; flex;
-align-items: center;`
-const ImageContainer = styled.div`
-flex: 1;`
-const InfoContainer = styled.div`
-flex: 1;`
-const Image = styled.img`
-width: 60vw;
-height: 50vw;
-`
+width: 100vh;
+height: 100vh;
+display: flex;
+align-items: center;
 
+`
+const ImageContainer = styled.div`
+flex: 1;
+height: 100%;`
+const InfoContainer = styled.div`
+flex: 1;
+padding: 50px;`
+
+const Image = styled.img`
+height:80%;
+`
+const Title = styled.h1 `
+font-size: 70px;`
+const Desc = styled.p`
+margin: 50px 0px;
+font-size: 20px;
+font-weight: 500;
+letter-spacing: 3px;`
+const Button = styled.button`
+padding: 10px;
+font-size: 20px;
+background-color: transparent;
+cursor: pointer;
+`
 
 
 
@@ -61,16 +83,13 @@ const Slider = () => {
 <Slide>
 <ImageContainer>
     <Image src={guitars}/>
-   
- 
-
-</ImageContainer>
+   </ImageContainer>
 <InfoContainer>
-<h1>title</h1>
+<Title>Best Guitars</Title>
+<Desc>Best guitars in the world</Desc>
+<Button>Shop Now</Button>
 </InfoContainer>
 </Slide>
-
-
 </Wrapper>
 <Arrow direction={"right"}>
     <ArrowRightOutlined/>
